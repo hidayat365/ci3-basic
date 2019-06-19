@@ -63,6 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+	
 	</style>
 </head>
 <body>
@@ -83,6 +84,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+</div>
+
+<div id="container">
+	<table class="table">
+		<!-- start header -->
+		<tr>
+			<td width="5%">No.</td>
+			<td width="5%">ID</td>
+			<td width="10%">Code</td>
+			<td width="70%">Name</td>
+			<td width="10%">Action</td>
+		</tr>
+		<!-- finish header -->
+		<!-- start displaying data -->
+		<?php $counter = 0; ?>
+		<?php foreach($data as $row): ?>
+		<tr>
+			<td><?= ++$counter ?></td>
+			<td><?= $row->id ?></td>
+			<td><?= $row->code ?></td>
+			<td><?= $row->name ?></td>
+			<td nowrap>View | Edit | Delete</td>
+		</tr>
+		<?php endforeach; ?>
+		<!-- finish displaying data -->
+	</table>
 </div>
 
 </body>

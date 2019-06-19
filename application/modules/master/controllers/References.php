@@ -20,7 +20,8 @@ class References extends CI_Controller {
 	 */
 	public function index()
 	{
-		$ref = References_Model::find(100);
-		$this->load->view('references/index');
+		$this->load->view('references/index', [
+			'data' => References_Model::all(),
+		]);
 	}
 }
